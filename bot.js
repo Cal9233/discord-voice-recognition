@@ -2,6 +2,14 @@ require("dotenv").config()
 
 const { error } = require("console");
 const Discord = require('discord.js');
+const fs = require('fs');
+
+//Create a PCM audio
+const audio = connection.receiver.createStream(user, {node: "pcm"});
+
+audio.pipe(fs.createWriteStream('user_audio'));
+
+//Bot commands
 const anti_venom = new Discord.Client();
 
 anti_venom.login(process.env.BOT_TOKEN)
