@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "bot.js",
-  "engine" : {
+  "engine": {
     "npm": "6.14.5"
   },
   "scripts": {
@@ -27,6 +27,8 @@
     "discord-player": "^3.0.3",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-static": "^4.2.7",
     "fluent-ffmpeg": "^2.1.2",
     "node-witai-speech": "^1.0.2",
     "opusscript": "0.0.7",
