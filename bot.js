@@ -46,6 +46,6 @@ anti_venom.on('message', async(msg) => {
     .then(connection => console.log('connected!'))
     .catch(err => {
       console.log(err)
-  })
+  });
   }
 });
