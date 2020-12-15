@@ -2,6 +2,7 @@ require("dotenv").config()
 
 const { error } = require("console");
 const Discord = require('discord.js');
+const speech = require('@google-cloud/speech');
 const fs = require('fs');
 const queue = new Map();
 
@@ -12,6 +13,7 @@ const queue = new Map();
 
 //Bot commands
 const anti_venom = new Discord.Client();
+const prefix = '?';
 
 
 anti_venom.login(process.env.BOT_TOKEN)
@@ -34,18 +36,40 @@ anti_venom.on('message', msg => {
 
 //Connecting the bot to voice channel
 anti_venom.on('message', async(msg) => {
-  const prefix = '?';
 
   if (msg.content === `${prefix}Connect`) {
     /// Get the voice channel that the user is in
     const vc = msg.member.voice.channel;
     ///Check if voice channel exists
-    if (!vc) return message.channel.send('User is not in a channel i can connect to.')
+    if (!vc) return message.channel.send('User is not in a channel I can connect to.')
+    ///join the voice channel
+    vc.join()
+    .then(connection => console.log('connected!'))
+    .catch(err => {
+      console.log(err)
+      });
+    } 
+});
+
+//Disconnecting Bot from voice channel
+anti_venom.on('message', async(msg) => {
+  const vc = msg.member.voice.channel;
+  if (msg.content === `${prefix}Join`) {
+    /// Get the voice channel that the user is in
+    ///Check if voice channel exists
+    if (!vc) return message.channel.send('User is not in a channel I can connect to.')
     ///join the voice channel
     vc.join()
     .then(connection => console.log('connected!'))
     .catch(err => {
       console.log(err)
   });
+  } else if (msg.content === (`${prefix}Leave`)) {
+    // check if the bot is connected to a voice channel
+    if (vc !== undefined) {
+      vc.leave();
+    } else {
+      msg.reply("I'm not connected to a voice channel!");
+    }
   }
 });

@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Cal9233/discord-voice-recognition#readme",
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
+    "@google-cloud/speech": "^4.1.5",
     "discord-player": "^3.0.3",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
