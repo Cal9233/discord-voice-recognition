@@ -62,6 +62,22 @@ SPOTIFY_TOKEN_SECRET
 
 You can execute command on terminal:
 
-```npm start '''
+`npm start `
 
-```
+## Bot Start Up
+
+Assuming you already have your discord connected to the server, make sure you have a voice channel and a text channel
+
+1. Join Voice Channel
+2. Type `?join` onto Text Channel
+3. Type `?help` for list of commands
+
+## Voice Commands
+
+Bot picks up hot keywords such as "Music Play"
+Example of a perfect command is
+`*Pause* Music Play Dancin' *Pause*`
+
+- The bot listens to users simultaneously in the same voice channel
+- Try not to have long pauses in between words
+- Having a sensitive mic or a lot of background noise may have the voice commands not work properly
