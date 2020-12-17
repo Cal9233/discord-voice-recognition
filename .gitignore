@@ -1,5 +1,5 @@
 .env
-.vscode/settings.json
+settings.json
 data/
 temp/
 node_modules/
