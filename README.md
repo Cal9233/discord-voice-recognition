@@ -62,7 +62,9 @@ SPOTIFY_TOKEN_SECRET
 
 You can execute command on terminal:
 
-`npm start `
+```
+npm start
+```
 
 ## Bot Start Up
 
